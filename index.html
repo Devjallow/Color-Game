@@ -18,7 +18,7 @@
     }
   </style>
 <body>
-
+  <input type="text" id="colorInput" style="display: none;">
   <h2 class="info">press letters to the color</h2>
 
   <p></p>
@@ -105,7 +105,15 @@
      textpree.innerText = event.key
      console.log(textpree)
     
+    
+    document.getElementById('colorInput').focus();
+
+      // Prevent default behavior of the input field
+      document.getElementById('colorInput').addEventListener('keydown', function(event) {
+        event.stopPropagation();
+      });
     })
+
   </script>
 
 </body>
